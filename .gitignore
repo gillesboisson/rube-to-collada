@@ -1,0 +1,12 @@
+/vendor
+/node_modules
+/public/storage
+/storage/videos-queue/*
+/storage/videos-queue-complete/*
+Homestead.yaml
+Homestead.json
+.env
+
+.idea
+
+public/files

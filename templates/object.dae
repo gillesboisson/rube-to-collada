@@ -1,0 +1,6 @@
+<visual_scene id="Scene" name="Scene">
+  <node id="[name]" name="[name]" type="NODE">
+    <matrix sid="transform">[matrix]</matrix>
+    <instance_geometry url="#[name]-mesh" name="[name]"/>
+  </node>
+</visual_scene>

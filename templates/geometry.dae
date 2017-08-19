@@ -1,0 +1,33 @@
+<geometry id="[name]-mesh" name="[name]">
+  <mesh>
+    <source id="[name]-mesh-positions">
+      <float_array id="[name]-mesh-positions-array" count="[position_vertices_count]">[position_vertices]</float_array>
+      <technique_common>
+        <accessor source="#[name]-mesh-positions-array" count="[position_vertices_prop_count]" stride="3">
+          <param name="X" type="float"/>
+          <param name="Y" type="float"/>
+          <param name="Z" type="float"/>
+        </accessor>
+      </technique_common>
+    </source>
+    <source id="[name]-mesh-normals">
+      <float_array id="[name]-mesh-normals-array" count="[normal_vertices_count]">[normal_vertices]</float_array>
+      <technique_common>
+        <accessor source="#[name]-mesh-normals-array" count="[normal_vertices_prop_count]" stride="3">
+          <param name="X" type="float"/>
+          <param name="Y" type="float"/>
+          <param name="Z" type="float"/>
+        </accessor>
+      </technique_common>
+    </source>
+    <vertices id="[name]-mesh-vertices">
+      <input semantic="POSITION" source="#[name]-mesh-positions"/>
+    </vertices>
+    <polylist count="[triangles_count]">
+      <input semantic="VERTEX" source="#[name]-mesh-vertices" offset="0"/>
+      <input semantic="NORMAL" source="#[name]-mesh-normals" offset="1"/>
+      <vcount>[triangles_count_strides]</vcount>
+      <p>[triangles]</p>
+    </polylist>
+  </mesh>
+</geometry>
