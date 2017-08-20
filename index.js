@@ -55,6 +55,12 @@ module.exports = function rubeToCollada(rubePath,colladaPath,filter = true){
 
 
     var pos = body.position;
+    var rotation = body.angle;
+
+    var crot = Math.cos(rotation);
+    var srot = Math.sin(rotation);
+
+    //console.log('rotation : ', rotation);
 
     var vertInd = 0;
     var finalVertices = [];
@@ -194,7 +200,11 @@ module.exports = function rubeToCollada(rubePath,colladaPath,filter = true){
 
     var objectData = {
       name:bodyName,
-      matrix:'1 0 0 '+pos.x+' 0 1 0 '+pos.y+' 0 0 1 0 0 0 0 1',
+      matrix:
+      crot+' '+(-srot).toString()+' 0 '+pos.x+' '+
+      srot+' '+ crot +' 0 '+pos.y+' '+
+      '0 0 1 0'+' '+
+      '0 0 0 1',
     };
 
 
